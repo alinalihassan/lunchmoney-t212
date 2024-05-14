@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "lunchmoney-t212"
+version = "0.1.0"
+description = ""
+authors = ["Alin Ali Hassan <alin.hassan@booking.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+dataclasses-json = "^0.6.6"
+lunchable = "^1.3.2"
+python-trading212-alinalihassan = "^2.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
