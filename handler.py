@@ -3,7 +3,6 @@ Fetch Account total from Trading 212 and update your asset in LunchMoney.
 Ideally to be scheduled periodically
 """
 
-import json
 import logging
 from os import getenv
 
@@ -41,6 +40,7 @@ def sync_investments():
             balance=total,
             currency=currency_code,
             institution_name="Trading 212",
+            exclude_transactions=True,
         )
         logger.info("Trading 212 investments created!")
     else:
@@ -57,3 +57,7 @@ def run(event, context):
     sync_investments()
 
     return {"success": True}
+
+
+if __name__ == "__main__":
+    sync_investments()
