@@ -20,3 +20,7 @@
 
 # Env variables
 .env
+
+# Serverless
+.serverless
+node_modules

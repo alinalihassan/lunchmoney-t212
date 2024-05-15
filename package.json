@@ -1,0 +1,10 @@
+{
+  "name": "lunchmoney-t212",
+  "version": "1.0.0",
+  "description": "Sync Trading 212 investments to Lunch Money",
+  "author": "Alin Ali Hassan <alinalihassan@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-python-requirements": "^6.1.0"
+  }
+}

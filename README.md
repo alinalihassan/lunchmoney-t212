@@ -40,6 +40,16 @@ Before using this project, ensure you have the following:
 
 2. The script will fetch your investments from Trading 212 and sync them with your Lunch Money account.
 
+## Cloud Scheduled Function
+
+You should ideally schedule this function to the cloud, and use the free credits to keep your investments automatically updated. I went with the [Serverless Framework](http://serverless.com/) to simplify deploying to [AWS](https://aws.amazon.com/). After [setting up](https://www.serverless.com/framework/docs-getting-started) you can follow the steps below to upload and never look at it again:
+
+```
+serverless deploy
+```
+
+The config is at `serverless.yml`, configured to sync your investments every hour.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.

@@ -1,6 +1,5 @@
 """
 Fetch Account total from Trading 212 and update your asset in LunchMoney.
-Ideally to be scheduled periodically
 """
 
 from os import getenv
@@ -20,7 +19,7 @@ def find_t212_asset(lunch: LunchMoney) -> AssetsObject:
     )
 
 
-if __name__ == "__main__":
+def sync_investments():
     t212_client = Trading212(getenv("TRADING212_API_KEY"))
 
     total = t212_client.fetch_account_cash().total
@@ -41,3 +40,7 @@ if __name__ == "__main__":
     else:
         lunch.update_asset(asset.id, balance=total, currency=currency_code)
         print("Trading 212 investments updated!")
+
+
+if __name__ == "__main__":
+    sync_investments()

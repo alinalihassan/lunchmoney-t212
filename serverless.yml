@@ -1,0 +1,37 @@
+service: lunchmoney-t212
+
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: python3.11
+  environment:
+    TRADING212_API_KEY: ${env:TRADING212_API_KEY}
+    LUNCHMONEY_ACCESS_TOKEN: ${env:LUNCHMONEY_ACCESS_TOKEN}
+
+plugins:
+  - serverless-python-requirements
+
+# MacOS specific fix
+custom:
+  pythonRequirements:
+    useStaticCache: false
+    useDownloadCache: false
+    pipCmdExtraArgs:
+      - "--platform manylinux2014_x86_64"
+      - "--implementation cp" 
+      - "--python-version 3.11"
+      - "--only-binary=:all:"
+      - "--upgrade"
+
+package: 
+  patterns:
+    - "!**/**"
+    - "handler.py"
+
+functions:
+  sync:
+    handler: handler.run
+    events:
+      - schedule: cron(0 * ? * MON-FRI *)
