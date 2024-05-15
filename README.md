@@ -35,7 +35,7 @@ Before using this project, ensure you have the following:
 1. Run the project:
 
    ```
-   poetry run python lunchmoney_t212/__init__.py
+   poetry run python handler.py
    ```
 
 2. The script will fetch your investments from Trading 212 and sync them with your Lunch Money account.
